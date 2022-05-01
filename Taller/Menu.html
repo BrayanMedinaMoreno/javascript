@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="1"></div>
+    <script>
+        var OP
+        do{
+            OP = prompt ("digite un numero del 1 al 4: 1=Numero Invertido 2= Promedio de peso 3= tabla del 5 4= parqueadero");
+        }while ( OP > 5);
+        switch (OP) {
+            case "1":
+                var nucmplo,u, d, c, un, de
+       
+                do{
+                    nucmplo = prompt("Digite un numero de 5 cifras");
+                 }while( nucmplo > 99999 || nucmplo <= 9999);
+                    de = String (Math.trunc((nucmplo / 10000)))
+	                un = String (Math.trunc((nucmplo - (de * 10000)) /1000))
+	                c = String (Math.trunc((nucmplo - (de * 10000 + un * 1000)) /100))
+	                d = String (Math.trunc((nucmplo - (de * 10000 + un * 1000 + c * 100)) /10))
+	                u = String (Math.trunc((nucmplo - (de * 10000 + un * 1000 + c * 100 + d * 10))))
+                    document.write ( u + d + c +  un + de + "<br>" + de + "," + un + "," + c + "," + d + "," + u )
+            break;
+            case "2":
+                var promedio;
+                var estu1 = parseInt (prompt("ingrese peso primer estudiante"));
+                var estu2 = parseInt (prompt("ingrese peso segundo estudiante"));
+                var estu3 = parseInt (prompt("ingrese peso tarcer estudiante"));
+                var estu4 = parseInt (prompt("ingrese peso cuarto estudiante"));
+                var estu5 = parseInt (prompt("ingrese peso quinto estudiante"));
+                promedio = (estu1 + estu2 + estu3 + estu4 + estu5)/5  
+                //inicio if
+                if (estu1 == estu2 && estu1 == estu3 && estu1 == estu4 && estu1 == estu5 ){
+                    document.write (" el numero se repite 5 veces y el numero es " + estu1 + "kg" );
+                } 
+                // par
+                else if (estu1 == estu2 && estu3 == estu4 && estu5 != estu1 && estu5 != estu3  ){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu1 + " kg y " + estu3 + " kg")
+                }
+                else if (estu1 == estu3 && estu2 == estu4 && estu5 != estu1 && estu5 != estu2 && estu5 != estu3 && estu5 != estu4  ){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu1 + " kg y " + estu2 + " kg")
+                }
+                else if (estu1 != estu2 && estu2 == estu3 && estu4 == estu5 ){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu2 + " kg y " + estu4 + " kg")
+                }
+                else if (estu1 != estu2 && estu2 != estu3 && estu1 != estu3 && estu2 == estu4 && estu1 == estu5 ){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu1 + " kg y " + estu2 + " kg")
+                }
+                else if (estu1 != estu2 && estu1 != estu3 && estu2 != estu3 && estu2 == estu4 && estu3 == estu5 ){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu2 + " kg y " + estu3 + " kg")
+                }
+                else if (estu1 != estu2 && estu1 != estu3 && estu2 != estu3 && estu2 == estu4 && estu3 == estu5 ){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu2 + " kg y " + estu3 + " kg")
+                }
+                else if (estu1 != estu2 && estu1 != estu3 && estu1 == estu4 && estu1 != estu5 && estu2 != estu1 && estu2 == estu3 && estu2 != estu4 && estu5 != estu1 && estu5 != estu2 && estu5 != estu3 && estu5 != estu4 ){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu1 + " kg y " + estu2 + " kg")
+                }
+                // four
+                else if (estu1 != estu2 && estu1 == estu3 && estu1 == estu4 && estu1 == estu5){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu1 + " kg " )
+                }
+                else if (estu1 == estu2 && estu1 != estu3 && estu1 == estu4 && estu1 == estu5){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu1 + " kg " )
+                }
+                else if (estu1 == estu2 && estu1 == estu3 && estu1 != estu4 && estu1 == estu5){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu1 + " kg " )
+                }
+                else if (estu1 == estu2 && estu1 == estu3 && estu1 == estu4 && estu1 != estu5){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu1 + " kg " )
+                }
+                else if (estu2 != estu1 && estu2 == estu3 && estu2 == estu4 && estu2 == estu5){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu2 + " kg " )
+                }
+                else if (estu2 == estu1 && estu2 != estu3 && estu2 == estu4 && estu2 == estu5){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu2 + " kg " )
+                }
+                else if (estu2 == estu1 && estu2 == estu3 && estu2 != estu4 && estu2 == estu5){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu2 + " kg " )
+                }
+                else if (estu2 == estu1 && estu2 == estu3 && estu2 == estu4 && estu2 != estu5){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu2 + " kg " )
+                }
+                else if (estu3 != estu1 && estu3 == estu2 && estu3 == estu4 && estu3 == estu5){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu3 + " kg " )
+                }
+                else if (estu3 == estu1 && estu3 != estu2 && estu3 == estu4 && estu3 == estu5){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu3 + " kg " )
+                }
+                else if (estu3 == estu1 && estu3 == estu2 && estu3 != estu4 && estu3 == estu5){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu3 + " kg " )
+                }
+                else if (estu3 == estu1 && estu3 == estu2 && estu3 == estu4 && estu3 != estu5){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu3 + " kg " )
+                }
+                else if (estu4 != estu2 && estu4 == estu3 && estu4 == estu1 && estu4 == estu5){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu4 + " kg " )
+                }
+                else if (estu4 == estu2 && estu4 != estu3 && estu4 == estu1 && estu4 == estu5){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu4 + " kg " )
+                }
+                else if (estu4 == estu2 && estu4 == estu3 && estu4 != estu1 && estu4 == estu5){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu4 + " kg " )
+                }
+                else if (estu4 == estu2 && estu4 == estu3 && estu4 == estu1 && estu4 != estu5){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu4 + " kg " )
+                }
+                else if (estu5 != estu2 && estu5 == estu3 && estu5 == estu4 && estu5 == estu1){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu5 + " kg " )
+                }
+                else if (estu5 == estu2 && estu5 != estu3 && estu5 == estu4 && estu5 == estu1){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu5 + " kg " )
+                }
+                else if (estu5 == estu2 && estu5 == estu3 && estu5 != estu4 && estu5 == estu1){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu5 + " kg " )
+                }
+                else if (estu5 == estu2 && estu5 == estu3 && estu5 == estu4 && estu5 != estu1){
+                    document.write ("el numero se repite 4 veces y el numero es " + estu5 + " kg " )
+                }
+                //TRES
+                else if (estu1 != estu2 && estu1 == estu3 && estu1 == estu4 && estu1 != estu5 && estu2 != estu3 && estu2 != estu4 && estu2 == estu5 && estu5 != estu3 && estu5 != estu4 ){
+                    document.write ("el numero se repite 3 veces y el numero es " + estu1 + " kg " )
+                }
+                else if (estu1 == estu2 && estu3 == estu4 && estu1 == estu5 & estu2 == estu5  ){
+                    document.write ("el numero se repite 3 veces y el numero es " + estu1 + " kg " )
+                }
+                else if (estu1 == estu2 && estu1 == estu3 && estu1 != estu4 && estu1 != estu5){
+                    document.write ("el numero se repite 3 veces y el numero es " + estu1 + " kg " )
+                }
+                else if (estu1 != estu2 && estu1 != estu3 && estu1 == estu4 && estu1 == estu5){
+                    document.write ("el numero se repite 3 veces y el numero es " + estu1 + " kg " )
+                }
+                else if (estu2 == estu1 && estu2 == estu3 && estu2 != estu4 && estu2 != estu5){
+                    document.write ("el numero se repite 3 veces y el numero es " + estu2 + " kg " )
+                }
+                else if (estu2 != estu1 && estu2 != estu3 && estu2 == estu4 && estu2 == estu5){
+                    document.write ("el numero se repite 3 veces y el numero es " + estu2 + " kg " )
+                }
+                else if (estu3 == estu1 && estu3 == estu2 && estu3 != estu4 && estu3 != estu5){
+                    document.write ("el numero se repite 3 veces y el numero es " + estu3 + " kg " )
+                }
+                else if (estu3 != estu1 && estu3 != estu2 && estu3 == estu4 && estu3 == estu5){
+                    document.write ("el numero se repite 3 veces y el numero es " + estu3 + " kg " )
+                }
+                else if (estu4 == estu2 && estu4 == estu3 && estu4 != estu1 && estu4 != estu5){
+                    document.write ("el numero se repite 3 veces y el numero es " + estu4 + " kg " )
+                }
+                else if (estu4 != estu2 && estu4 != estu3 && estu4 == estu1 && estu4 == estu5){
+                    document.write ("el numero se repite 3 veces y el numero es " + estu4 + " kg " )
+                }
+                else if (estu5 == estu2 && estu5 == estu5 && estu5 != estu4 && estu5 != estu1){
+                    document.write ("el numero se repite 3 veces y el numero es " + estu5 + " kg " )
+                }
+                else if (estu5 != estu2 && estu5 != estu3 && estu5 == estu4 && estu5 == estu1){
+                    document.write ("el numero se repite 3 veces y el numero es " + estu5 + " kg " )
+                }
+                //diff
+                else if (estu1 != estu2 && estu1 == estu3 && estu1 == estu4 && estu1 != estu5 ){
+                    document.write ("el numero se repite 3 veces y el numero es " + estu1 + " kg " )
+                }
+                else if (estu1 == estu2 && estu1 == estu3 && estu1 != estu4 && estu1 != estu5 && estu4 == estu5 ){
+                    document.write ("el numero se repite 3 veces y el numero es " + estu1 + " kg " )
+                }
+                else if (estu1 == estu2 && estu1 != estu3 && estu2 != estu3 && estu3 == estu4 && estu1 == estu5 && estu2 == estu5 ){
+                    document.write ("el numero se repite 3 veces y el numero es " + estu1 + " kg " )
+                }
+                else if (estu1 != estu2 && estu2 == estu3 && estu3 == estu4 && estu1 == estu5 ){
+                    document.write ("el numero se repite 3 veces y el numero es " + estu2 + " kg " )
+                }
+                else if (estu1 == estu2 && estu1 != estu3 && estu2 != estu3 && estu3 != estu4 && estu1 == estu4 && estu2 == estu4 && estu3 == estu5 && estu1 != estu5 && estu2 != estu5){
+                    document.write ("el numero se repite 3 veces y el numero es " + estu1 + " kg " )
+                }
+                // DOS
+                else if (estu1 != estu2 && estu1 != estu3 && estu1 != estu4 && estu1 == estu5){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu1 + " kg " )
+                }
+                else if (estu1 != estu2 && estu1 != estu3 && estu1 == estu4 && estu1 != estu5){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu1 + " kg " )
+                }
+                else if (estu1 != estu2 && estu1 == estu3 && estu1 != estu4 && estu1 != estu5){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu1 + " kg " )
+                }
+                else if (estu1 == estu2 && estu1 != estu3 && estu1 != estu4 && estu1 != estu5){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu1 + " kg " )
+                }
+                else if (estu2 != estu1 && estu2 != estu3 && estu2 != estu4 && estu2 == estu5){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu2 + " kg " )
+                }
+                else if (estu2 != estu1 && estu2 != estu3 && estu2 == estu4 && estu2 != estu5){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu2 + " kg " )
+                }
+                else if (estu2 != estu1 && estu2 == estu3 && estu2 != estu4 && estu2 != estu5){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu2 + " kg " )
+                }
+                else if (estu2 == estu1 && estu2 != estu3 && estu2 != estu4 && estu2 != estu5){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu2 + " kg " )
+                }
+                else if (estu3 != estu1 && estu3 != estu2 && estu3 != estu4 && estu3 == estu5){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu3 + " kg " )
+                }
+                else if (estu3 != estu1 && estu3 != estu2 && estu3 == estu4 && estu3 != estu5){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu3 + " kg " )
+                }
+                else if (estu3 != estu1 && estu3 == estu2 && estu3 != estu4 && estu3 != estu5){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu3 + " kg " )
+                }
+                else if (estu3 == estu1 && estu3 != estu2 && estu3 != estu4 && estu3 != estu5){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu3 + " kg " )
+                }
+                else if (estu4 != estu2 && estu4 != estu3 && estu4 != estu1 && estu4 == estu5){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu4 + " kg " )
+                }
+                else if (estu4 != estu2 && estu4 != estu3 && estu4 == estu1 && estu4 != estu5){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu4 + " kg " )
+                }
+                else if (estu4 != estu2 && estu4 == estu3 && estu4 != estu1 && estu4 != estu5){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu4 + " kg " )
+                }
+                else if (estu4 == estu2 && estu4 != estu3 && estu4 != estu1 && estu4 != estu5){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu4 + " kg " ) 
+                }
+                else if (estu5 != estu2 && estu5 != estu3 && estu5 != estu4 && estu5 == estu1){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu5 + " kg " )
+                }
+                else if (estu5 != estu2 && estu5 != estu3 && estu5 == estu4 && estu5 != estu1){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu5 + " kg " )
+                }
+                else if (estu5 != estu2 && estu5 == estu3 && estu5 != estu4 && estu5 != estu1){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu5 + " kg " )
+                }
+                else if (estu5 == estu2 && estu5 != estu3 && estu5 != estu4 && estu5 != estu1){
+                    document.write ("el numero se repite 2 veces y el numero es " + estu5 + " kg " )
+                }
+                else {
+                    document.write ("ninguno se repite")
+                }    
+                document.write (" el promedio del numero es " + promedio + "kg" );
+            break;
+            case "3":
+                var k,ph
+                k = 0;
+                ph = 0;
+                while(k<= 10){
+                    ph = 5*k;
+                    document.getElementById("1").innerHTML +=`5 * ${k} =  ${ph}<br>`      
+                    k++
+                }
+            break;
+            case "4":
+                var vh,temp,pagar1,mj,hr,pf
+                pagar1 = 0;
+                temp = 0;
+                vh = "";
+                mj = "";
+                hr = 0;
+                pf = 0;
+                vh = prompt("¿Tiene un carro o una moto?:")
+                temp = parseInt(prompt("¿Cuantás horas tuvo el carro estacionado?"));
+                do{
+                hr = parseInt(prompt("Digite la hora que retira el vehiculo: (hora militar 24) "))
+                }while(hr>24);
+                switch (vh) {
+                    case "carro":
+                        pagar1 = 2500;
+                        mj += "El precio por hora de un carro es $2.500 pesos";
+                        pf = pagar1 * temp;
+                        break;
+                    case "moto":
+                        pagar1 = 1100;  
+                        mj += "El precio por hora de una moto es $1.100 pesos";
+                        pf = pagar1* temp;
+                        break;
+                    default:
+                        console.log ("no ingreso ningun vehiculo ")
+                        break;
+                }
+                    if(hr >= 20 && hr <= 24 || hr >= 0 && hr <= 6){
+                        pf = pf + (pf*0.05);
+                        mj += "\nComo la tarifa es nocturna se le aumenta un 5% ($"+(pf*0.05)+")" ;
+                        alert (mj)
+                    }
+                    else {
+                        mj+=("\nEn total debe pagar " + pf+ " por estar "+temp+" horas estacionado.");
+                        alert(mj)
+                    }
+            break;
+            default:
+              alert(" error 404 ")  
+        }
+    </script>
+</body>
+</html>

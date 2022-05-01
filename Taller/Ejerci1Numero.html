@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var nucmplo,u, d, c, un, de
+       
+       do{
+            nucmplo = prompt("Digite un numero de 5 cifras");
+        }while( nucmplo > 99999 || nucmplo <= 9999);
+        de = String (Math.trunc((nucmplo / 10000)))
+	    un = String (Math.trunc((nucmplo - (de * 10000)) /1000))
+	    c = String (Math.trunc((nucmplo - (de * 10000 + un * 1000)) /100))
+	    d = String (Math.trunc((nucmplo - (de * 10000 + un * 1000 + c * 100)) /10))
+	    u = String (Math.trunc((nucmplo - (de * 10000 + un * 1000 + c * 100 + d * 10))))
+        document.write ( u + d + c +  un + de + "<br>" + de + "," + un + "," + c + "," + d + "," + u )
+
+      
+
+    </script>
+</body>
+</html>

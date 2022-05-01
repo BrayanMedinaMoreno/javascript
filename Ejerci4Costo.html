@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+            var vh,temp,pagar1,mj,hr,pf
+            pagar1 = 0;
+            temp = 0;
+            vh = "";
+            mj = "";
+            hr = 0;
+            pf = 0;
+            vh = prompt("¿Tiene un carro o una moto?:")
+            temp = parseInt(prompt("¿Cuantás horas tuvo el carro estacionado?"));
+            do{
+            hr = parseInt(prompt("Digite la hora que retira el vehiculo: (hora militar 24) "))
+            }while(hr>24);
+            switch (vh) {
+                case "carro":
+                    pagar1 = 2500;
+                     mj += "El precio por hora de un carro es $2.500 pesos";
+                     pf = pagar1 * temp;
+                    break;
+                case "moto":
+                    pagar1 = 1100;  
+                    mj += "El precio por hora de una moto es $1.100 pesos";
+                    pf = pagar1* temp;
+                    break;
+                default:
+                    console.log ("no ingreso ningun vehiculo ")
+                    break;
+            }
+                if(hr >= 20 && hr <= 24 || hr >= 0 && hr <= 6){
+                    pf = pf + (pf*0.05);
+                    mj += "\nComo la tarifa es nocturna se le aumenta un 5% ($"+(pf*0.05)+")" ;
+                    alert (mj)
+                }
+                else {
+                    mj+=("\nEn total debe pagar " + pf+ " por estar "+temp+" horas estacionado.");
+                    alert(mj)
+                }
+        </script>
+</body>
+</html>
